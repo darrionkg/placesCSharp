@@ -17,7 +17,7 @@ namespace Places.Tests
         PlacesController controller = new PlacesController();
 
         //Act
-        IActionResult view = controller.Create("Portland", "Super cool to the homeless");
+        IActionResult view = controller.Create("Portland", "Super cool to the homeless", "a lifetime", "yes", "deets");
 
         //Assert
         Assert.IsInstanceOfType(view, typeof(RedirectToActionResult));
@@ -28,7 +28,7 @@ namespace Places.Tests
     {
         //Arrange
         PlacesController controller = new PlacesController();
-        RedirectToActionResult actionResult = controller.Create("SoCal", "Really cool and nice out for the homeless") as RedirectToActionResult;
+        RedirectToActionResult actionResult = controller.Create("SoCal", "Really cool and nice out for the homeless", "a lifetime", "yes", "deets") as RedirectToActionResult;
 
         //Act
         string result = actionResult.ActionName;
