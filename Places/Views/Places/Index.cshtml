@@ -1,23 +1,33 @@
 @using Places.Models;
 
-<h1>Places you've been</h1>
-<ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>'Allo Poppet</title>
+  </head>
+  <body>
+    <h1>Places you've been</h1>
+    <ul>
 
-  @if(Model.Count == 0)
-  {
-    <p>You have no places in your Places List</p>
-  }
-  @if(Model.Count != 0)
-  {
-    @foreach (Place place in Model)
-    {
-      <li><a href='/places/@place.GetId()'>@place.GetDescription()</a></li>
-    }
-  }
+      @if(Model.Count == 0)
+      {
+        <p>You have no places in your Places List</p>
+      }
+      @if(Model.Count != 0)
+      {
+        @foreach (Place place in Model)
+        {
+          <li><a href='/places/@place.GetId()'>@place.GetDescription()</a></li>
+        }
+      }
 
-</ul>
-<a href="/places/new">Add a new place you've been.</a>
+    </ul>
+    <a href="/places/new">Add a new place you've been.</a>
 
-<form action="/places/delete" method="post">
-  <button type="submit" name="button">Clear All Places</button>
-</form>
+    <form action="/places/delete" method="post">
+      <button type="submit" name="button">Clear All Places</button>
+    </form>
+  </body>
+</html>

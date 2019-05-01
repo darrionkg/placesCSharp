@@ -1,7 +1,24 @@
-<h1>Here are your @Model.GetDescription() details: </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>'Allo Poppet</title>
+  </head>
+  <body>
 
-<h2>@Model.GetDescription()</h2>
-<h2>@Model.GetPlaceDescription()</h2>
+    <h1>Here are your @Model.GetDescription() details: </h1>
 
-<a href='/places/new'>Add another place</a>
-<a href='/places'>View all places</a>
+    <h2>@Model.GetDescription()</h2>
+    <ul>
+      <li>Description: @Model.GetPlaceDescription()</li>
+      <li>Length of stay: @Model.GetStay()</li>
+      <li>Homeless friendly? @Model.GetHomeless()</li>
+      <li>Other deets: @Model.GetDeets()</li>
+    </ul>
+
+    <a href='/places/new'>Add another place</a>
+    <a href='/places'>View all places</a>
+
+  </body>
+</html>

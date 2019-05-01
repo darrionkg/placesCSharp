@@ -8,13 +8,19 @@ namespace Places.Models
     private int _id;
     private static List<Place> _instances = new List<Place> {};
     private string _placeDescription;
+    private string _stay;
+    private string _homeless;
+    private string _deets;
 
-    public Place (string description, string placeDescription)
+    public Place (string description, string placeDescription, string stay, string homeless, string deets)
     {
       _description = description;
       _instances.Add(this);
       _id = _instances.Count;
       _placeDescription = placeDescription;
+      _stay = stay;
+      _homeless = homeless;
+      _deets = deets;
     }
 
     public string GetDescription()
@@ -50,6 +56,21 @@ namespace Places.Models
     public string GetPlaceDescription()
     {
       return _placeDescription;
+    }
+
+    public string GetStay()
+    {
+      return _stay;
+    }
+
+    public string GetHomeless()
+    {
+      return _homeless;
+    }
+
+    public string GetDeets()
+    {
+      return _deets;
     }
 
   }
