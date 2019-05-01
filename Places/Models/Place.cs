@@ -5,12 +5,14 @@ namespace Places.Models
   public class Place
   {
     private string _description;
+    private int _id;
     private static List<Place> _instances = new List<Place> {};
 
     public Place (string description)
     {
       _description = description;
       _instances.Add(this);
+      _id = _instances.Count;
     }
 
     public string GetDescription()
@@ -31,6 +33,16 @@ namespace Places.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public int GetId()
+    {
+      return _id;
+    }
+
+    public static Place Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
 
   }
